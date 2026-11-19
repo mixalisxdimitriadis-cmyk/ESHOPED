@@ -1,0 +1,183 @@
+/* ==========================================================================
+   DARK RELEASE V3 — «Electric Blue»
+   Χρώματα παρμένα από το DARK RELEASE V3.jpg:
+     #000000 / #010013 / #010026   → το μαύρο-ναυτικό βάθος
+     #01125D                       → το μεσαίο μπλε
+     #024AA4 / #027AE3             → το ηλεκτρικό μπλε
+     #02B4FC                       → η κορυφή της λάμψης
+   Φορτώνεται ΜΕΤΑ το dark2.css. Μόνο χρώμα + φόντο — ίδια δομή με το V2.
+   ========================================================================== */
+
+:root{
+  --em-bg:#000308;
+  --em-surface:#03080F;
+  --em-surface-2:#05101F;
+  --em-line:#0B1626;
+  --em-line-2:#10233C;
+  --em-text:#EEF4FB;
+  --em-muted:#7E8CA3;
+  --em-accent:#0B6BE0;
+  --em-accent-h:#2E9BFF;
+  --v3-glow:#02B4FC;
+  --v3-deep:#01125D;
+}
+
+/* ------------------------------------------------------- φόντο σελίδας */
+html{background:#000308}
+body{
+  /* ΕΝΙΑΙΟ φόντο σε όλη τη σελίδα (fixed): ίδια εικόνα, ίδιο πέπλο παντού —
+     χωρίς ζώνες, χωρίς ασυμμετρία αριστερά/δεξιά. */
+  background-color:#000308;
+  background-image:
+    linear-gradient(180deg,rgba(0,3,8,.80) 0%,rgba(0,3,8,.84) 45%,rgba(0,3,8,.88) 100%),
+    radial-gradient(1400px 700px at 50% -10%, rgba(2,122,227,.16) 0%, rgba(0,0,0,0) 65%),
+    url("../images/bg/v3-bg-5200.jpg");
+  background-repeat:no-repeat,no-repeat,no-repeat;
+  background-size:cover,cover,cover;
+  background-position:center top,center top,center center;
+  background-attachment:fixed,fixed,fixed;
+  color:var(--em-text);
+}
+
+/* --------------------------------------------------------------- header */
+.em-header{
+  background:rgba(0,3,8,.82);
+  border-bottom:1px solid var(--em-line);
+  box-shadow:0 1px 0 rgba(2,180,252,.06) inset;
+}
+.em-search input{background:rgba(3,8,15,.9);border-color:var(--em-line-2)}
+.em-nav>li>a:hover,.em-nav>li>button:hover{color:var(--v3-glow)}
+.em-cta{
+  background:linear-gradient(180deg,var(--em-accent-h),var(--em-accent));
+  box-shadow:0 10px 26px -12px rgba(2,122,227,.75), 0 0 0 1px rgba(2,180,252,.18) inset;
+}
+.em-cta:hover{background:linear-gradient(180deg,#57C4FF,var(--em-accent-h))}
+
+/* ------------------------------------------------------------ panels */
+.em-panel{background:rgba(2,6,13,.97);border-bottom:1px solid var(--em-line);box-shadow:0 40px 80px -40px #000}
+.em-tabs{background:rgba(3,8,15,.95)}
+.em-tab.is-active{background:linear-gradient(180deg,var(--em-accent-h),var(--em-accent));color:#fff}
+.em-catcol h4{color:#CBD8EA}
+.em-catcol a::before{background:var(--v3-glow)}
+.em-catcol a:hover{color:#fff}
+.em-brands a{background:rgba(3,8,15,.9)}
+.em-brands a:hover{background:rgba(5,16,31,.95)}
+
+/* --------------------------------------------------------------- hero */
+.em-slide::after{
+  background:linear-gradient(90deg,rgba(0,3,8,.86) 0%,rgba(0,3,8,.56) 30%,rgba(0,3,8,.16) 60%,rgba(0,3,8,0) 88%);
+}
+.em-hero{border-bottom:1px solid var(--em-line)}
+.em-hero-btn{
+  background:linear-gradient(180deg,var(--em-accent-h),var(--em-accent));
+  box-shadow:0 14px 34px -14px rgba(2,122,227,.8);
+}
+.em-hero-btn:hover{background:linear-gradient(180deg,#57C4FF,var(--em-accent-h))}
+.em-hero-dots button.is-active{background:var(--v3-glow);box-shadow:0 0 12px rgba(2,180,252,.8)}
+.em-hero-arrow:hover{background:var(--em-accent);border-color:var(--v3-glow)}
+
+/* ------------------------------------------------------------ μπάντες */
+.em-banner{border-color:var(--em-line);box-shadow:0 0 0 1px rgba(2,180,252,.05), 0 18px 40px -26px #000}
+.em-banner:hover{border-color:var(--em-line-2)}
+
+/* -------------------------------------------------- κατηγορίες/προϊόντα */
+.em-cats{
+  position:relative;
+  margin-top:14px;
+  background:transparent;               /* ίδιο φόντο με την υπόλοιπη σελίδα */
+  border-top:1px solid var(--em-line);
+  border-bottom:1px solid var(--em-line);
+}
+.em-cats::before{content:none}
+.em-cats>.container{position:relative;z-index:1}
+
+/* και μια πιο ανοιχτή ζώνη κάτω από το hero (οι 3 μπάντες) */
+.em-banners{
+  padding:34px 0 10px;
+  position:relative;
+}
+
+/* footer: ελαφρύ ίχνος του φόντου */
+.em-footer{
+  background:rgba(0,2,5,.55);
+  border-top:1px solid var(--em-line);
+}
+
+
+/* ======================================================================
+   ΚΑΤΗΓΟΡΙΕΣ · ΚΑΡΤΕΣ · FOOTER  (επαναφορά μετά το κόψιμο του αρχείου)
+   ====================================================================== */
+.em-cats-title{color:#fff!important}
+.em-cats-head{color:#7E8CA3;border-bottom-color:var(--em-line)}
+.em-cats-list li a{color:#9FB0C6}
+.em-cats-list li a i{color:#3E5674}
+.em-cats-list li a:hover,.em-cats-list li a:hover i{color:var(--v3-glow)}
+.em-cats-tabs{border-bottom-color:var(--em-line)}
+.em-cats-tabs button.is-active{color:#fff;border-bottom-color:var(--v3-glow)}
+.em-allbtn{border-color:var(--em-line-2);color:#B7C6DA}
+.em-allbtn:hover{border-color:var(--v3-glow);color:#fff;box-shadow:0 0 22px -6px rgba(2,180,252,.5)}
+
+/* κάρτες: σκούρο ναυτικό σώμα + λευκό πλακίδιο πίσω από τη φωτογραφία */
+.em-card{
+  background:linear-gradient(180deg,rgba(5,16,31,.96),rgba(3,8,15,.98));
+  border:1px solid var(--em-line-2);
+  box-shadow:0 22px 50px -30px #000;
+}
+.em-card:hover{border-color:#1B3C63;box-shadow:0 26px 60px -30px rgba(2,122,227,.45)}
+.em-card-media{background:#fff}
+.em-card-body{color:#E6EEF8}
+.em-card-brand{color:#7E8CA3}
+.em-card-title a{color:#EAF2FB}
+.em-card-title a:hover{color:var(--v3-glow)}
+.em-card-stock.ok{color:#4FD8A4}
+.em-card-stock.warn{color:#E0A33B}
+.em-card-stock .dot{background:#E0A33B}
+.em-card-stock.ok .dot{background:#4FD8A4}
+.em-price s{color:#6C7A90}
+.em-price strong{color:#fff}
+.em-badge{background:linear-gradient(180deg,#2E9BFF,#0B6BE0);color:#fff}
+.em-cicons{color:#6C7A90}
+.em-cicons i:hover{color:var(--v3-glow)}
+
+/* footer */
+.em-footer-logo img{filter:brightness(1.05)}
+.em-footer-brand p{color:#8FA0B7}
+.em-footer-col h4{color:#CBD8EA}
+.em-footer-col a{color:#8FA0B7}
+.em-footer-col a:hover{color:var(--v3-glow)}
+.em-footer-contact span{color:#8FA0B7}
+.em-footer-contact i{color:var(--v3-glow)}
+.em-footer-bottom{border-top-color:var(--em-line);color:#5C6B80}
+
+/* γενικά */
+::selection{background:var(--em-accent);color:#fff}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:#01040A}
+::-webkit-scrollbar-thumb{background:#122238;border-radius:6px}
+::-webkit-scrollbar-thumb:hover{background:#1B3C63}
+a{color:var(--em-accent-h)}
+a:hover{color:var(--v3-glow)}
+
+
+/* ======================================================================
+   ΚΑΝΕΝΑ ΚΕΝΟ: 6 κάρτες σε 3 στήλες × 2 σειρές (γεμίζει δίπλα στη λίστα)
+   ====================================================================== */
+@media (min-width:1200px){
+  .em-prodgrid{grid-template-columns:repeat(3,1fr);gap:22px}
+}
+@media (min-width:992px) and (max-width:1199px){
+  .em-prodgrid{grid-template-columns:repeat(3,1fr)}
+}
+/* η λίστα κατηγοριών δεν αφήνει κενό κάτω από τις κάρτες */
+@media (min-width:992px){
+  .em-cats-list{max-height:100%;overflow:auto;padding-right:6px}
+  .em-cats-list::-webkit-scrollbar{width:6px}
+  .em-cats-list::-webkit-scrollbar-thumb{background:#16283F;border-radius:3px}
+}
+
+
+/* ======================================================================
+   ΕΥΘΥΓΡΑΜΜΙΣΗ: ίδιο πλάτος container με το header (1240) παντού
+   ====================================================================== */
+body .container{width:100%!important;max-width:1240px!important;padding-left:15px;padding-right:15px}
+@media (max-width:1269px){ body .container{max-width:100%!important} }

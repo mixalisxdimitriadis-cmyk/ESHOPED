@@ -1,0 +1,54 @@
+/* ==========================================================================
+   DARK RELEASE V3 — UBUNTU σε όλα τα κείμενα
+   Φορτώνεται τελευταίο. Τα βάρη αντιστοιχούν στην πραγματική οικογένεια:
+     300 Light · 400 Regular · 500 Medium · 600 → Medium (alias)
+     700 Bold · 800 → Bold (alias)
+   Τα εικονίδια (themify / flaticon) ΔΕΝ αγγίζονται — μένουν στη γραμματοσειρά τους.
+   ========================================================================== */
+
+:root{
+  --font-ui:'Ubuntu',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+
+html,body,button,input,select,textarea,optgroup,
+h1,h2,h3,h4,h5,h6,p,a,li,ul,ol,span,div,strong,b,em,small,label,td,th,blockquote,figcaption{
+  font-family:var(--font-ui)!important;
+}
+
+/* μεγέθη/βάρη που χρειάζονται «κλείδωμα» ώστε να πάρουν το σωστό Ubuntu */
+body{font-weight:400}
+h1,h2,h3,h4,h5,h6{font-weight:700;letter-spacing:-.01em}
+.em-hero-copy h1{font-weight:700}
+.em-hero-copy p{font-weight:400}
+.em-nav>li>a,.em-nav>li>button{font-weight:600}      /* -> Ubuntu Medium */
+.em-cta,.em-hero-btn,.em-allbtn{font-weight:600}
+.em-tab{font-weight:600}
+.em-cta .em-arrow,.em-hero-btn span{font-weight:400}
+.em-cats-head,.em-catcol h4,.em-brandhead,.em-footer-col h4{font-weight:700}
+.em-cats-list li a{font-weight:400}
+.em-cats-tabs button{font-weight:600}
+.em-cats-tabs button.is-active{font-weight:700}
+.em-card-brand{font-weight:500}
+.em-card-title{font-weight:500}
+.em-card-title a{font-weight:500}
+.em-price strong{font-weight:700}
+.em-price s{font-weight:400}
+.em-badge{font-weight:700}
+.em-footer-about,.em-footer-brand p{font-weight:400}
+.em-footer-col a{font-weight:400}
+.em-panelfoot{font-weight:400}
+.em-panelfoot a{font-weight:600}
+.em-catimg{font-weight:400}
+.em-search input::placeholder{font-weight:300}       /* -> Ubuntu Light */
+.em-footer-bottom{font-weight:400}
+
+/* εικονίδια: μη τα αγγίξει τίποτα */
+.ti,[class^="ti-"],[class*=" ti-"],
+.fa,[class^="fa-"],[class*=" fa-"],
+[class^="flaticon-"],[class*=" flaticon-"],
+.bi,[class^="bi-"],[class*=" bi-"]{
+  font-family:inherit;
+}
+i[class^="ti-"],i[class*=" ti-"]{font-family:"themify"!important}
+i[class^="flaticon-"],i[class*=" flaticon-"]{font-family:"Flaticon"!important}
+i[class^="bi-"],i[class*=" bi-"]{font-family:"bootstrap-icons"!important}

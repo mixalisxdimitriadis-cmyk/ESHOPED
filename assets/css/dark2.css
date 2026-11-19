@@ -1,0 +1,445 @@
+/* ==========================================================================
+   NICTORYS × MALLIRIS — DARK 2
+   Σκούρο «Dark 2» πάνω στο template Nictorys.
+   Φορτώνεται ΜΕΤΑ το style.css. Δεν αγγίζει το πρωτότυπο template.
+   ========================================================================== */
+
+:root{
+  --em-bg:#08090B;
+  --em-surface:#0E1014;
+  --em-surface-2:#12151A;
+  --em-line:#1C2026;
+  --em-line-2:#242A31;
+  --em-text:#F0F2F4;
+  --em-muted:#878D95;
+  --em-accent:#3D93B5;
+  --em-accent-h:#57B2D5;
+  --em-danger:#D9534F;
+  --em-warn:#E0A33B;
+  --em-success:#3FBF7F;
+  --em-radius:8px;
+}
+
+/* ------------------------------------------------------------------ base */
+html,body{background:var(--em-bg)}
+body{color:var(--em-text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.6}
+h1,h2,h3,h4,h5,h6{color:var(--em-text);font-family:Inter,system-ui,sans-serif}
+p{color:#A9AFB7}
+a{color:var(--em-accent);transition:color .18s ease}
+a:hover,a:focus{color:var(--em-accent-h);text-decoration:none}
+.container{max-width:1240px}
+img{max-width:100%;height:auto}
+::selection{background:var(--em-accent);color:#fff}
+
+/* φωτεινές επιφάνειες του template → σκούρες */
+.section-padding,section{background:transparent}
+.features-section .feature-grids,.features-section-s2 .feature-grids{background:transparent}
+.contact-section .left-col .call-back{background:var(--em-surface);border:1px solid var(--em-line);color:var(--em-text)}
+.contact-section form input,.contact-section form select,.contact-section form textarea,
+.contact-pg-section form input,.contact-pg-section form select,.contact-pg-section form textarea{
+  background:#0B0D10;border:1px solid var(--em-line-2);color:var(--em-text);border-radius:6px
+}
+.contact-section form input::placeholder,.contact-pg-section form input::placeholder{color:var(--em-muted)}
+.why-choose-us-section .content-area{background:transparent}
+.why-choose-faq-section{background:transparent}
+.testimonials-section-s2 .testimonial-grids .grid,.testimonials-section-s3 .testimonial-grids .grid,
+.testimonials-section-s3{background:var(--em-surface);border:1px solid var(--em-line);border-radius:var(--em-radius)}
+
+/* πορτοκαλί accent → steel-blue */
+.theme-btn{background:var(--em-accent)!important;border:1px solid var(--em-accent)!important;color:#fff!important;border-radius:var(--em-radius);font-weight:600}
+.theme-btn:hover{background:var(--em-accent-h)!important;border-color:var(--em-accent-h)!important}
+.theme-btn-s2{background:transparent!important;border:1px solid var(--em-line-2)!important;color:var(--em-text)!important;border-radius:var(--em-radius);font-weight:500}
+.theme-btn-s2:hover{border-color:var(--em-accent)!important;color:var(--em-accent)!important;background:transparent!important}
+.section-title h2 span,.section-title-s2 h2 span,.section-title-s3 h2 span,.section-title-s4 h2 span{color:var(--em-accent)}
+.section-title p,.section-title-s2 p,.section-title-s4 p{color:var(--em-muted)}
+
+/* ============================ HEADER (Dark 2) ========================= */
+.em-header{position:relative;z-index:60;background:rgba(8,9,11,.96);border-bottom:1px solid var(--em-line);backdrop-filter:saturate(120%) blur(10px)}
+.em-header .container{width:100%;max-width:1240px;margin:0 auto;padding-left:15px;padding-right:15px}
+.em-header-inner{display:flex;align-items:center;gap:28px;height:104px}
+.em-logo{flex:none;display:flex;align-items:center}
+.em-logo img{width:132px;height:auto;display:block}
+.em-nav{display:flex;align-items:center;gap:26px;list-style:none;margin:0;padding:0}
+.em-nav>li{position:relative}
+.em-nav>li>a,.em-nav>li>button{
+  background:none;border:0;padding:8px 0;font-size:15px;font-weight:600;color:var(--em-text);
+  display:inline-flex;align-items:center;gap:6px;cursor:pointer;font-family:inherit
+}
+.em-nav>li>a:hover,.em-nav>li>button:hover{color:var(--em-accent)}
+.em-nav .caret{width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);opacity:.75}
+.em-search{flex:1;max-width:430px;margin-left:6px;position:relative}
+.em-search input{
+  width:100%;height:44px;border-radius:8px;border:1px solid var(--em-line-2);
+  background:#0B0D10;color:var(--em-text);padding:0 14px 0 42px;font-size:13.5px
+}
+.em-search input::placeholder{color:var(--em-muted)}
+.em-search .em-search-ico{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--em-muted);font-size:14px}
+.em-actions{display:flex;align-items:center;gap:14px;margin-left:auto}
+.em-ico{color:#C9CED6;font-size:17px;line-height:1;position:relative}
+.em-ico:hover{color:var(--em-accent)}
+.em-cart .badge{position:absolute;top:-7px;right:-8px;background:var(--em-accent);color:#fff;font-size:10px;font-weight:700;border-radius:9px;padding:1px 5px}
+.em-cta{
+  display:inline-flex;align-items:center;gap:8px;background:var(--em-accent);color:#fff!important;
+  font-weight:600;font-size:14.5px;padding:11px 18px;border-radius:8px;white-space:nowrap;border:0;cursor:pointer;font-family:inherit
+}
+.em-cta:hover{background:var(--em-accent-h)}
+.em-burger{display:none;background:none;border:1px solid var(--em-line-2);border-radius:8px;padding:9px 11px;color:var(--em-text)}
+
+/* ============================ MEGA MENUS ============================== */
+.em-panel{
+  position:absolute;left:0;right:0;top:100%;background:#0B0D11;border-bottom:1px solid var(--em-line);
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.9);display:none;z-index:70
+}
+.em-panel.is-open{display:block}
+.em-panel-inner{max-width:1240px;margin:0 auto;padding:0 15px}
+.em-tabs{display:grid;grid-template-columns:repeat(4,1fr);background:#0E1014;border-bottom:1px solid var(--em-line)}
+.em-tab{
+  appearance:none;border:0;background:none;color:#C9CED6;font-family:inherit;font-size:14.5px;font-weight:600;
+  padding:18px 10px;cursor:pointer;border-right:1px solid var(--em-line)
+}
+.em-tab:last-child{border-right:0}
+.em-tab:hover{color:#fff}
+.em-tab.is-active{background:var(--em-accent);color:#fff}
+.em-tabbody{display:none;padding:26px 0 0}
+.em-tabbody.is-active{display:block}
+.em-catgrid{display:grid;grid-template-columns:1fr 1fr 1fr 430px;gap:26px;align-items:start}
+.em-catcol h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#D6DAE0;margin:0 0 14px;font-weight:700;padding-bottom:10px;border-bottom:1px solid var(--em-line)}
+.em-catcol ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.em-catcol a{color:#B9BFC7;font-size:13.5px;display:flex;align-items:center;gap:9px}
+.em-catcol a::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--em-accent);flex:none}
+.em-catcol a:hover{color:#fff}
+.em-catimg{
+  border:2px dashed #3A424B;border-radius:10px;height:400px;display:flex;align-items:center;justify-content:center;
+  color:#6E747C;font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:10px
+}
+.em-panelfoot{border-top:1px solid var(--em-line);margin-top:26px;padding:16px 0 22px;font-size:13px;color:var(--em-muted)}
+.em-panelfoot strong{color:var(--em-text);letter-spacing:.04em}
+.em-panelfoot a{color:var(--em-accent);font-weight:600}
+
+/* κατασκευαστές */
+.em-brandspanel{padding:0 0 22px}
+.em-brandspooll{max-height:540px;overflow:auto}
+.em-brandhead{display:flex;align-items:center;justify-content:space-between;margin:0;padding:18px 0 14px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#B9BFC7}
+.em-brands{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--em-line)}
+.em-brands a{background:#0B0D11;height:104px;display:flex;align-items:center;justify-content:center;padding:14px 18px}
+.em-brands img{height:44px;max-height:44px;max-width:100%;width:auto;object-fit:contain;filter:grayscale(1) brightness(1.4);opacity:.75;transition:.18s}
+.em-brands a:hover img{filter:grayscale(0) brightness(1.1);opacity:1}
+
+/* ============================== HERO (Dark 2) ========================= */
+.em-hero{position:relative;height:690px;overflow:hidden;background:#050608;border-bottom:1px solid var(--em-line)}
+.em-slides{position:absolute;inset:0}
+.em-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;pointer-events:none}
+.em-slide.is-active{opacity:1;pointer-events:auto}
+.em-slide img{width:100%;height:100%;object-fit:cover;object-position:right center;display:block}
+.em-slide::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(4,5,7,.78) 0%,rgba(4,5,7,.56) 30%,rgba(4,5,7,.22) 58%,rgba(4,5,7,0) 86%)
+}
+.em-hero-inner{position:relative;z-index:3;height:100%;display:flex;align-items:center}
+.em-hero-copy{max-width:700px}
+.em-hero-copy h1{font-size:47px;line-height:1.14;font-weight:700;letter-spacing:-.02em;margin:0 0 18px;white-space:normal}
+.em-hero-copy p{font-size:17px;color:#C6CBD2;margin:0 0 30px;max-width:520px}
+.em-hero-btn{display:inline-flex;align-items:center;gap:10px;background:var(--em-accent);color:#fff;font-weight:600;font-size:15px;padding:14px 24px;border-radius:8px}
+.em-hero-btn:hover{background:var(--em-accent-h);color:#fff}
+.em-hero-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.28);background:rgba(6,7,9,.55);color:#fff;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;backdrop-filter:blur(3px)
+}
+.em-hero-arrow:hover{background:var(--em-accent);border-color:var(--em-accent)}
+.em-hero-arrow--prev{left:26px}
+.em-hero-arrow--next{right:26px}
+.em-hero-dots{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:5;display:flex;gap:10px}
+.em-hero-dots button{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.32);cursor:pointer;transition:.18s}
+.em-hero-dots button.is-active{background:var(--em-accent);transform:scale(1.35)}
+
+/* ============================ 3 ΜΠΑΝΤΕΣ ============================== */
+.em-banners{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:34px 0 10px}
+.em-banner{position:relative;height:190px;border-radius:var(--em-radius);overflow:hidden;border:1px solid var(--em-line);background:#0A0C0F}
+.em-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top;display:block}
+
+/* ============================ RESPONSIVE ============================== */
+@media (max-width:1199px){
+  .em-catgrid{grid-template-columns:1fr 1fr 1fr;gap:22px}
+  .em-catimg{display:none}
+  .em-brands{grid-template-columns:repeat(5,1fr)}
+  .em-hero-copy h1{font-size:44px}
+}
+@media (max-width:991px){
+  .em-header-inner{height:84px;gap:16px}
+  .em-search{display:none}
+  .em-nav{display:none}
+  .em-burger{display:inline-flex}
+  .em-banners{grid-template-columns:1fr;gap:14px}
+  .em-banner{height:180px}
+  .em-tabs{grid-template-columns:1fr 1fr}
+  .em-catgrid{grid-template-columns:1fr 1fr}
+  .em-hero{height:520px}
+  .em-hero-copy h1{font-size:34px}
+  .em-brands{grid-template-columns:repeat(3,1fr)}
+  /* mobile nav */
+  .em-header.is-open .em-nav{
+    display:flex;position:absolute;left:0;right:0;top:100%;background:#0B0D11;border-bottom:1px solid var(--em-line);
+    flex-direction:column;align-items:flex-start;gap:0;padding:8px 15px 16px
+  }
+  .em-header.is-open .em-nav>li{width:100%;border-bottom:1px solid var(--em-line)}
+  .em-header.is-open .em-nav>li:last-child{border-bottom:0}
+  .em-header.is-open .em-nav>li>a,.em-header.is-open .em-nav>li>button{padding:13px 0;width:100%;justify-content:space-between}
+}
+@media (max-width:575px){
+  .em-hero{height:460px}
+  .em-hero-copy h1{font-size:27px}
+  .em-hero-copy p{font-size:14.5px}
+  .em-hero-arrow{width:36px;height:36px}
+  .em-hero-arrow--prev{left:10px}
+  .em-hero-arrow--next{right:10px}
+  .em-panel-inner{padding:0 12px}
+  .em-tabs{grid-template-columns:1fr}
+  .em-catgrid{grid-template-columns:1fr}
+  .em-brands{grid-template-columns:repeat(2,1fr)}
+  .em-logo img{width:104px}
+}
+
+
+/* ======================================================================
+   PASS 2 — τίτλοι, eyebrows, εικονίδια, CTA, skills, carousel βέλη
+   ====================================================================== */
+.section-title h2,.section-title-s2 h2,.section-title-s3 h2,.section-title-s4 h2{
+  color:var(--em-text)!important;font-family:Inter,system-ui,sans-serif;font-weight:700;letter-spacing:-.01em
+}
+.section-title>span,.section-title-s2>span,.section-title-s3>span,.section-title-s4>span{
+  color:var(--em-accent)!important;letter-spacing:.14em;text-transform:uppercase;font-size:12px;font-weight:700;display:inline-block
+}
+.section-title h2 span,.section-title-s2 h2 span,.section-title-s3 h2 span,.section-title-s4 h2 span{color:var(--em-accent)!important}
+.about-details .section-title h2,.why-choose-us-section .section-title h2{color:var(--em-text)!important}
+
+/* εικονίδια / λίστες */
+.service-grids .icon,.service-grids i,.feature-grids i,.about-details li:before,
+.why-choose-us-section .icon{color:var(--em-accent)!important}
+.about-details ul li:before{color:var(--em-accent)}
+.about-details blockquote{background:#0E1014;border-left:2px solid var(--em-accent);color:#C6CBD2;padding:18px 22px}
+
+/* CTA «192003» */
+.cta-section-s2{background-color:#0A0C10!important;background-image:none!important}
+.cta-section-s2:before{background-color:rgba(4,5,7,.86)!important}
+.cta-section-s2 .cta-details h2{color:#fff!important}
+.cta-section-s2 p{color:#C6CBD2}
+.cta-section-s2 .theme-btn{position:relative;z-index:2}
+
+/* skills / progress */
+.why-choose-us-section .skills .progress{background:#1C2026!important}
+.why-choose-us-section .skills .progress-bar{background:var(--em-accent)!important}
+.why-choose-us-section .skills .progress-bar:after{background-color:var(--em-accent)!important}
+.why-choose-us-section .skills .progress>span{color:#B9BFC7!important}
+
+/* φόρμα επικοινωνίας */
+.contact-section form button,.contact-pg-section form button{background:var(--em-accent)!important;border-color:var(--em-accent)!important;color:#fff!important;border-radius:8px}
+.contact-section form button:hover{background:var(--em-accent-h)!important}
+.contact-section .left-col .call-back{background:#0E1014;border-color:var(--em-line)}
+
+/* projects / carousel βέλη */
+.latest-projects-section-s2 .owl-theme .owl-controls .owl-nav [class*=owl-]{background:#0E1014!important;color:#C9CED6!important;box-shadow:none!important;border:1px solid var(--em-line)}
+.latest-projects-section-s2 .owl-theme .owl-controls .owl-nav [class*=owl-]:hover{background:var(--em-accent)!important;color:#fff!important;border-color:var(--em-accent)}
+.latest-projects-section-s2 .inner .cat{color:var(--em-accent)!important}
+.latest-projects-section-s2 .inner .details{background:rgba(6,8,11,.9)!important}
+.partners-section .separator{background:#1C2026}
+
+/* blog / testimonials / team */
+.blog-section .grid h3 a,.services-section-s2 .service-grids h3 a,.team-grids h3 a{color:var(--em-text)!important}
+.blog-section .more{color:var(--em-accent)!important}
+.blog-section .grid,.services-section-s2 .service-grids .grid,.team-grids .grid{
+  background:#0E1014;border:1px solid var(--em-line);border-radius:var(--em-radius)
+}
+.blog-section .entry-meta,.blog-section .entry-meta li,.blog-section .entry-meta li a{color:var(--em-muted)!important}
+.blog-section .entry-meta li a:hover{color:var(--em-accent)!important}
+.testimonial-grids .grid{background:#0E1014!important;border:1px solid var(--em-line)}
+.testimonial-grids .grid:after,.testimonial-grids .grid:before{color:var(--em-accent)}
+.partners-section{background:transparent}
+
+/* footer */
+.site-footer{background:#060709!important;border-top:1px solid var(--em-line)}
+.site-footer .widget-title,.site-footer h3,.site-footer h4{color:var(--em-text)!important}
+.site-footer .separator,.site-footer .footer-widget+.footer-widget{border-color:var(--em-line)}
+.site-footer a{color:#A9AFB7}
+.site-footer a:hover{color:var(--em-accent)}
+.site-footer .newsletter-widget form input{background:#0B0D10!important;border:1px solid var(--em-line);color:var(--em-text)!important}
+.site-footer .lower-footer{border-top:1px solid var(--em-line)}
+
+/* γενικά */
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:#0A0C0F}
+::-webkit-scrollbar-thumb{background:#242A31;border-radius:6px}
+::-webkit-scrollbar-thumb:hover{background:#33404A}
+
+
+/* PASS 3 — τελευταία πορτοκαλί υπολείμματα */
+.team-section .team-grids ul li a{background-color:var(--em-accent)!important}
+.team-section .team-grids h3+span{color:var(--em-accent)!important}
+.services-section .service-grids .fi:before,
+.services-section-s2 .service-grids .fi:before,
+.services-section-s3 .service-grids .fi:before{color:var(--em-accent)!important}
+.services-section .service-grids .read-more{color:var(--em-accent)!important}
+.blog-section .grid h3 a:hover,.services-section-s2 .service-grids h3 a:hover{color:var(--em-accent)!important}
+.header-style-1 .contact-info ul li i,.header-style-2 .contact-info ul li i{color:var(--em-accent)!important}
+.contact-section .left-col .call-back h2,.contact-section .left-col .call-back .num{color:var(--em-accent)!important}
+
+
+/* PASS 4 — mobile header / hero βέλη */
+@media (max-width:991px){
+  .em-hero-arrow{top:auto;transform:none;bottom:14px}
+  .em-hero-arrow--prev{left:12px}
+  .em-hero-arrow--next{right:12px}
+  .em-hero-dots{bottom:24px}
+  .em-hero-inner{align-items:flex-start;padding-top:56px}
+  .em-hero-copy{padding-bottom:34px}
+}
+@media (max-width:575px){
+  .em-actions .em-ico:not(.em-cart){display:none}
+  .em-actions{gap:10px}
+  .em-cta{padding:10px 13px;font-size:13.5px;gap:6px}
+  .em-burger{padding:8px 10px}
+  .em-logo img{width:96px}
+  .em-hero-copy h1{font-size:26px;line-height:1.18}
+  .em-hero-copy p{font-size:14px;margin-bottom:22px}
+}
+
+
+/* ======================================================================
+   PASS 5 — «Κατηγορίες Ανταλλακτικών Κινητήρα» + κάρτες προϊόντων
+   ====================================================================== */
+.em-cats{padding:34px 0 64px}
+.em-cats-title{font-size:25px;font-weight:700;letter-spacing:-.01em;margin:0 0 24px;color:var(--em-text)!important}
+.em-cats-wrap{display:grid;grid-template-columns:258px 1fr;gap:36px;align-items:start}
+.em-cats-head{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--em-muted);
+  padding-bottom:12px;border-bottom:1px solid var(--em-line);margin-bottom:8px;font-weight:600
+}
+.em-cats-list{list-style:none;margin:0;padding:0}
+.em-cats-list li a{
+  display:flex;align-items:center;gap:11px;font-size:12.5px;color:#AEB4BC;
+  padding:6px 0;letter-spacing:.02em;text-transform:uppercase
+}
+.em-cats-list li a i{font-size:14px;color:#6E747C;width:16px;text-align:center;transition:.15s}
+.em-cats-list li a:hover{color:#fff}
+.em-cats-list li a:hover i{color:var(--em-accent)}
+
+.em-cats-tabs{display:flex;gap:34px;border-bottom:1px solid var(--em-line);margin-bottom:22px}
+.em-cats-tabs button{
+  background:none;border:0;border-bottom:2px solid transparent;color:var(--em-muted);
+  font-family:inherit;font-size:14.5px;font-weight:600;padding:0 0 12px;cursor:pointer
+}
+.em-cats-tabs button:hover{color:#DDE1E6}
+.em-cats-tabs button.is-active{color:#fff;border-bottom-color:var(--em-accent)}
+
+.em-prodgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.em-card{background:#fff;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:.18s ease}
+.em-card:hover{transform:translateY(-2px);box-shadow:0 16px 34px -18px rgba(0,0,0,.85)}
+.em-card-media{display:block;aspect-ratio:1/1;background:#fff;overflow:hidden}
+.em-card-media img{width:100%;height:100%;object-fit:contain;padding:12px;display:block}
+.em-card-body{padding:12px 13px 14px;color:#1B1D21;display:flex;flex-direction:column;flex:1}
+.em-card-brand{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8A8F96;margin-bottom:5px}
+.em-card-title{
+  font-size:12.5px;line-height:1.4;font-weight:600;margin:0 0 10px;min-height:52px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden
+}
+.em-card-title a{color:#1B1D21}
+.em-card-title a:hover{color:var(--em-accent)}
+.em-card-stock{display:flex;align-items:center;gap:6px;font-size:11px;margin-bottom:12px}
+.em-card-stock .dot{width:6px;height:6px;border-radius:50%;background:var(--em-warn);flex:none}
+.em-card-stock.ok{color:#12805C}
+.em-card-stock.ok .dot{background:var(--em-success)}
+.em-card-stock.warn{color:#B47818}
+.em-card-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.em-price{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.em-price s{font-size:11.5px;color:#9AA0A8}
+.em-price strong{font-size:16px;font-weight:700;color:#111827;letter-spacing:-.01em}
+.em-badge{background:var(--em-danger);color:#fff;font-size:9.5px;font-weight:700;padding:2px 5px;border-radius:4px;line-height:1.5}
+.em-cicons{display:flex;gap:9px;color:#9AA0A8;font-size:13px}
+.em-cicons i{cursor:pointer;transition:.15s}
+.em-cicons i:hover{color:var(--em-accent)}
+.em-allbtn{
+  display:inline-flex;align-items:center;justify-content:center;margin-top:28px;
+  border:1px solid var(--em-line-2);color:#C9CED6;padding:12px 26px;border-radius:8px;
+  font-size:14px;font-weight:600;background:transparent
+}
+.em-allbtn:hover{color:#fff;border-color:var(--em-accent)}
+
+@media (max-width:1199px){
+  .em-prodgrid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:991px){
+  .em-cats-wrap{grid-template-columns:1fr;gap:22px}
+  .em-cats-list{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
+  .em-prodgrid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:575px){
+  .em-cats-list{grid-template-columns:1fr}
+  .em-prodgrid{grid-template-columns:1fr}
+  .em-cats-title{font-size:21px}
+}
+
+
+/* ======================================================================
+   PASS 6 — footer EM, κρυμμένες ενότητες, φωτό στο panel
+   ====================================================================== */
+.em-hidden-sections{display:none!important}
+.em-catimg.has-img{border:0;padding:0;overflow:hidden;border-radius:10px;background:#0A0C0F}
+.em-catimg.has-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:saturate(.95)}
+
+.em-footer{background:#060709;border-top:1px solid var(--em-line);padding:52px 0 0;margin-top:48px}
+.em-footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.35fr;gap:40px;padding-bottom:38px}
+.em-footer-logo img{width:128px;height:auto;display:block;margin-bottom:16px}
+.em-footer-brand p{font-size:12.5px;line-height:1.75;color:var(--em-muted);max-width:290px;margin:0}
+.em-footer-col h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#D6DAE0;margin:0 0 14px;font-weight:700}
+.em-footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.em-footer-col a{font-size:13px;color:#A9AFB7}
+.em-footer-col a:hover{color:var(--em-accent)}
+.em-footer-contact{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.em-footer-contact span{display:flex;align-items:flex-start;gap:9px;font-size:12.5px;color:#A9AFB7;line-height:1.5}
+.em-footer-contact i{color:var(--em-accent);font-size:14px;margin-top:1px}
+.em-footer-bottom{
+  border-top:1px solid var(--em-line);padding:18px 0 22px;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;font-size:12px;color:#6E747C;flex-wrap:wrap
+}
+@media (max-width:991px){
+  .em-footer-main{grid-template-columns:1fr 1fr;gap:28px}
+  .em-footer-brand{grid-column:1/-1}
+}
+@media (max-width:575px){
+  .em-footer-main{grid-template-columns:1fr}
+  .em-footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+}
+
+
+/* ======================================================================
+   PASS 7 — μεγαλύτερο hero («όπως το template»)
+   ====================================================================== */
+@media (min-width:1200px){
+  .em-hero{height:min(88vh,880px);min-height:760px}
+  .em-hero-copy{max-width:720px}
+  .em-hero-copy h1{font-size:54px;line-height:1.1}
+  .em-hero-copy p{font-size:18px;margin-bottom:32px}
+  .em-hero-btn{padding:15px 26px;font-size:15.5px}
+  .em-hero-arrow{width:52px;height:52px}
+}
+@media (min-width:992px) and (max-width:1199px){
+  .em-hero{height:min(80vh,780px);min-height:680px}
+  .em-hero-copy h1{font-size:44px}
+}
+@media (max-width:991px){
+  .em-hero{height:min(72vh,620px);min-height:540px}
+}
+@media (max-width:575px){
+  .em-hero{height:520px;min-height:0}
+}
+
+
+/* PASS 8 — λογότυπο σε ύψος, αντίθεση τίτλου πάνω στη φωτογραφία */
+.em-logo img{width:auto;height:54px;max-width:170px;object-fit:contain}
+@media (min-width:1200px){
+  .em-slide::after{
+    background:linear-gradient(90deg,rgba(4,5,7,.88) 0%,rgba(4,5,7,.6) 26%,rgba(4,5,7,.22) 54%,rgba(4,5,7,0) 84%)
+  }
+  .em-hero-copy h1,.em-hero-copy p{text-shadow:0 2px 22px rgba(0,0,0,.65)}
+}
+@media (max-width:575px){ .em-logo img{height:44px;max-width:130px} }
