@@ -1,0 +1,9 @@
+# --- Τοπικά αρχεία που ΔΕΝ ανεβαίνουν στο repo ---
+_backup/
+screenshots/
+assets/images/_duplicates/
+desktop.ini
+*.zip
+*.psd
+Thumbs.db
+.DS_Store
